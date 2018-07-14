@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "DataBase";
+}
+
+<h1>База данных.</h1>
+<h3>Двойной клик для редактирования.</h3>
+<table style="width:100%">
+    <tr>
+        <th>Наименование файла</th>
+        <th>Версия файла</th>
+        <th>Дата изменения</th>
+    </tr>
+    @foreach (var Item in Model)
+    {
+        <tr class='changable' id='tr_@Item.Id'>
+            <td class="Name">@Item.Name</td>
+            <td class="Version">@Item.Version</td>
+            <td class="DateTime">@Item.DateTime</td>
+            <td><button class='removeBtn' 
+                    id='@Item.Id' 
+                    style="background-color:lightcoral" 
+                    onclick='removeFromDB(this)'>Удалить</button>
+                <button class='downloadBtn' 
+                    id='dwnld_@Item.Id' 
+                    onclick='download(this)' 
+                    style="visibility:visible">Скачать файл</button>
+            </td>
+        </tr>
+    }
+</table>
+
+<script>
+    $(".changable").dblclick(function () {
+        if (document.getElementsByClassName("saveBtn").length > 0) {
+            alert('Сначала сохраните значение.');
+            return;
+        }
+
+        var allDataToChange = this.getElementsByTagName('td');
+        for (var i = 0; i < allDataToChange.length; i++) {
+            var elementToChange = allDataToChange[i];
+            if (elementToChange.innerHTML.includes("button")) {
+                var buttons = elementToChange.getElementsByTagName("button");
+                for (var ind = 0; ind < buttons.length; ind++) {
+                    if (buttons[ind].id.includes("dwnld")) {
+                        buttons[ind].style = 'visibility:hidden';
+                    }
+                    else {
+                        buttons[ind].setAttribute("onclick", "updateToDB(this)");
+                        buttons[ind].innerText = "Сохранить";
+                        buttons[ind].style = "background-color:lightblue";
+                        buttons[ind].className = "saveBtn";
+                    }
+                }
+            }
+            else {
+                var valWas = elementToChange.innerHTML;
+                var classWas = elementToChange.className;
+                var input = "<input type='text' value='" + valWas + "' class='" + classWas +"'></input>";
+                elementToChange.innerHTML = input;
+            }
+        }
+    });
+
+    function updateToDB(item) {
+        var dateTime = "";
+        var name = "";
+        var version = "";
+        var id = item.id;
+
+        var trWithData = document.getElementById('tr_' + item.id);
+        var elementsWithData = trWithData.getElementsByTagName('input');
+        for (var i = 0; i < elementsWithData.length; i++) {
+            switch (elementsWithData[i].className) {
+                case 'DateTime': dateTime = elementsWithData[i].value; break;
+                case 'Name': name = elementsWithData[i].value; break;
+                case 'Version': version = elementsWithData[i].value; break;
+            }
+        }
+
+        var mainUrl = window.location.protocol + "//" + window.location.host + "/";
+        $.ajax({
+            url: mainUrl + 'db/update',
+            data: { doAction: "update", id: id, dateTime: dateTime, name: name, version: version }
+        }).done(function (data) {
+            if (data.includes("true")) {
+                var allDataToChange = trWithData.getElementsByTagName('td');
+                for (var i = 0; i < allDataToChange.length; i++) {
+                    var elementToChange = allDataToChange[i];
+                    if (elementToChange.innerHTML.includes("button")) {
+                        var buttons = elementToChange.getElementsByTagName("button");
+                        for (var ind = 0; ind < buttons.length; ind++) {
+                            if (buttons[ind].id.includes("dwnld")) {
+                                buttons[ind].style = 'visibility:visible';
+                            }
+                            else {
+                                buttons[ind].setAttribute("onclick", "removeFromDB(this)");
+                                buttons[ind].innerText = "Удалить";
+                                buttons[ind].style = "background-color:lightcoral";
+                                buttons[ind].className = "removeBtn";
+                            }
+                        }
+                    }
+                    else {
+                        var value = elementToChange.getElementsByTagName('input')[0].value;
+                        elementToChange.innerHTML = value;
+                    }
+                }
+            }
+            else {
+                alert("Error: " + data);
+            }
+        });
+    }
+
+    function removeFromDB(item) {
+        var id = item.id;
+        var mainUrl = window.location.protocol + "//" + window.location.host + "/";
+        $.ajax({
+            url: mainUrl + 'db/update',
+            data: { doAction: "delete", id: id }
+        }).done(function (data) {
+            if (data.includes("true")) {
+                var trWithData = document.getElementById('tr_' + item.id);
+                trWithData.outerHTML = "";
+            }
+            else {
+                alert("Error: " + data);
+            }
+        });
+    }
+
+    function download(item) {
+        var id = item.id.replace('dwnld_', '');
+
+        var dateTime = "";
+        var name = "";
+        var version = "";
+
+        var trWithData = document.getElementById('tr_' + id);
+        var elementsWithData = trWithData.getElementsByTagName('td');
+        for (var i = 0; i < elementsWithData.length; i++) {
+            switch (elementsWithData[i].className) {
+                case 'DateTime': dateTime = elementsWithData[i].innerText; break;
+                case 'Name': name = elementsWithData[i].innerText; break;
+                case 'Version': version = elementsWithData[i].innerText; break;
+            }
+        }
+
+        var mainUrl = window.location.protocol + "//" + window.location.host + "/";
+        var fullUrl = mainUrl + "db/download?id="+id+"&dateTime=" + dateTime + "&name=" + name + "&version=" + version;
+        window.open(fullUrl, "_self")
+    }
+</script>

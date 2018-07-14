@@ -1,0 +1,4 @@
+<File FileVersion="Версия файла">
+<Name>Наименование файла</Name>
+<DateTime>Дата изменения</DateTime>
+</File>

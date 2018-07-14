@@ -1,0 +1,75 @@
+[19:28:12,045] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Index() is started
+[19:28:14,939] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: DBController.Index() is started
+[19:28:14,940] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetFilesDataFromDB() is called.
+[19:28:14,941] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() is called.
+[19:28:14,964] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: SELECT * FROM dbo.Files
+[19:28:16,154] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Index() is started
+[19:28:16,716] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: DBController.Index() is started
+[19:28:16,716] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetFilesDataFromDB() is called.
+[19:28:16,716] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() is called.
+[19:28:16,716] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: SELECT * FROM dbo.Files
+[19:39:42,664] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Index() is started
+[19:39:47,459] [INFO] [XML_DB_TestTask.Controllers.HomeController]: Receiving file from user.
+[19:39:47,459] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Checking file name. File name: œ»‚≈Ú_00000000000000_.xml
+[19:39:47,459] [INFO] [XML_DB_TestTask.Controllers.HomeController]: Wrong file name.
+[19:39:51,913] [INFO] [XML_DB_TestTask.Controllers.HomeController]: Receiving file from user.
+[19:39:51,913] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Checking file name. File name: ‘‡ÈÎ_1_2 (1).xml
+[19:39:51,913] [INFO] [XML_DB_TestTask.Controllers.HomeController]: File name is right.
+[19:39:51,914] [INFO] [XML_DB_TestTask.Controllers.HomeController]: File saved.
+[19:39:51,918] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Insert() called.
+[19:39:51,918] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:39:51,943] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: INSERT INTO dbo.Files (Name, Version, DateTime) VALUES ('Bulat.txt', '4.3.2.1', '05.05.2018')
+[19:39:51,956] [INFO] [XML_DB_TestTask.Controllers.HomeController]: Data from file saved to DB
+[19:39:55,709] [INFO] [XML_DB_TestTask.Controllers.HomeController]: Receiving file from user.
+[19:39:55,709] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Checking file name. File name: ‘‡ÈÎ_1_2.xml
+[19:39:55,709] [INFO] [XML_DB_TestTask.Controllers.HomeController]: File name is right.
+[19:39:55,709] [INFO] [XML_DB_TestTask.Controllers.HomeController]: File saved.
+[19:39:55,710] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Insert() called.
+[19:39:55,710] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:39:55,710] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: INSERT INTO dbo.Files (Name, Version, DateTime) VALUES ('test.txt', '2.1.1.2', '01.01.2018')
+[19:39:55,712] [INFO] [XML_DB_TestTask.Controllers.HomeController]: Data from file saved to DB
+[19:39:57,498] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: DBController.Index() started
+[19:39:57,499] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetFilesDataFromDB() called.
+[19:39:57,499] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:39:57,499] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: SELECT * FROM dbo.Files
+[19:40:00,416] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Update() called. Action: delete
+[19:40:00,416] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Delete() called.
+[19:40:00,416] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:40:00,416] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: DELETE FROM dbo.Files WHERE Id = 15
+[19:40:01,289] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Download() called.
+[19:40:01,290] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Temp file created. Name: ‘‡ÈÎ_1_14.xml
+[19:40:01,291] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: File sent to user.
+[19:40:01,292] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: File deleted.
+[19:40:01,292] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetFilesDataFromDB() called.
+[19:40:01,292] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:40:01,292] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: SELECT * FROM dbo.Files
+[19:40:02,381] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Update() called. Action: delete
+[19:40:02,381] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Delete() called.
+[19:40:02,381] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:40:02,382] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: DELETE FROM dbo.Files WHERE Id = 13
+[19:40:04,268] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Update() called. Action: delete
+[19:40:04,268] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Delete() called.
+[19:40:04,268] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:40:04,268] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: DELETE FROM dbo.Files WHERE Id = 14
+[19:40:06,198] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Index() is started
+[19:45:06,033] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Index() is started
+[19:45:11,804] [INFO] [XML_DB_TestTask.Controllers.HomeController]: Receiving file from user.
+[19:45:11,804] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Checking file name. File name: ‘‡ÈÎ_1_11.xml
+[19:45:11,804] [INFO] [XML_DB_TestTask.Controllers.HomeController]: File name is right.
+[19:45:11,805] [INFO] [XML_DB_TestTask.Controllers.HomeController]: File saved.
+[19:45:11,807] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Insert() called.
+[19:45:11,807] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:45:11,829] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: INSERT INTO dbo.Files (Name, Version, DateTime) VALUES ('TestFile.exe', '1.0', '03.11.1994')
+[19:45:11,842] [INFO] [XML_DB_TestTask.Controllers.HomeController]: Data from file saved to DB
+[19:45:16,303] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: DBController.Index() started
+[19:45:16,303] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetFilesDataFromDB() called.
+[19:45:16,303] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:45:16,303] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: SELECT * FROM dbo.Files
+[19:45:26,676] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Update() called. Action: update
+[19:45:26,676] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Update() called.
+[19:45:26,676] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:45:26,676] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: UPDATE dbo.Files SET Name = 'TestFile.exe', Version = '1.1', DateTime = '03.11.1994' WHERE Id = 1
+[19:45:28,507] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: DBController.Index() started
+[19:45:28,507] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetFilesDataFromDB() called.
+[19:45:28,507] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[19:45:28,507] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: SELECT * FROM dbo.Files
