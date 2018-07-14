@@ -73,3 +73,24 @@
 [19:45:28,507] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetFilesDataFromDB() called.
 [19:45:28,507] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
 [19:45:28,507] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: SELECT * FROM dbo.Files
+[20:32:16,005] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Index() is started
+[20:32:19,404] [DEBUG] [XML_DB_TestTask.Controllers.HomeController]: Index() is started
+[20:32:20,114] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: DBController.Index() started
+[20:32:20,115] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetFilesDataFromDB() called.
+[20:32:20,115] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[20:32:20,144] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: SELECT * FROM dbo.Files
+[20:32:22,657] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Update() called. Action: update
+[20:32:22,657] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Update() called.
+[20:32:22,657] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[20:32:22,657] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: UPDATE dbo.Files SET Name = 'TestFile.exe', Version = '1.1', DateTime = '03.11.1994' WHERE Id = 1
+[20:32:24,411] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Update() called. Action: update
+[20:32:24,411] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Update() called.
+[20:32:24,411] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[20:32:24,411] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: UPDATE dbo.Files SET Name = 'Bulat.txt', Version = '4.3.2.1', DateTime = '01.02.2018' WHERE Id = 12
+[20:32:25,291] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Download() called.
+[20:32:25,292] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: Temp file created. Name: Τΰιλ_1_1.xml
+[20:32:25,293] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: File sent to user.
+[20:32:25,293] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: File deleted.
+[20:32:25,293] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetFilesDataFromDB() called.
+[20:32:25,293] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: GetConnection() called.
+[20:32:25,294] [DEBUG] [XML_DB_TestTask.Controllers.DBController]: CommandText: SELECT * FROM dbo.Files
